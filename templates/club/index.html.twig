@@ -7,26 +7,26 @@
         <div>
             <ul>
             {% for club in clubs %}
-                <li>{{ club.id }}</br>
-                {{ club.firstname }}</br>
-                {{ club.lastname }}</br>
-                {{ club.age }}</br>
-                {{ club.size }}</br>
-                {{ club.nationality }}</br>
-                <form action="{{ path('app_club_new') }}">
-                    <input type="submit" value="New" />
-                </form></br>
-                <form action="{{ path('app_club_show', {'id': club.id}) }}">
-                    <input type="submit" value="View" />
-                </form></br>
-                <form action="{{ path('app_club_edit', {'id': club.id}) }}">
-                    <input type="submit" value="Edit" />
-                </form></li>
+                <li>
+                <div>{{ club.name }}</div>
+                <div>{{ club.city }}</div>
+                <div>{{ club.country }}</div>
+                <div>
+                    <form action="{{ path('app_club_new') }}">
+                        <input type="submit" value="New" />
+                    </form>
+                    <form action="{{ path('app_club_show', {'id': club.id}) }}">
+                        <input type="submit" value="View" />
+                    </form>
+                    <form action="{{ path('app_club_edit', {'id': club.id}) }}">
+                        <input type="submit" value="Edit" />
+                    </form>
+                </div></li>
             {% else %}
                 <form action="{{ path('app_club_new') }}">
                     <input type="submit" value="Create a club" />
                 </form>
-            {% endfor %} </ul></br>
+            {% endfor %} </ul>
             </div>
         <div>
             <a href="{{ path('app_index') }}">Home</a>

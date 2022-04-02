@@ -20,7 +20,13 @@
                         Club: {{ player.club.name }}
                     {% endif %}
                 </div>
-                <div>National team: {{ player.national.name }} ({{ player.national.country }})</div>
+                <div>
+                    {% if player.national is empty %}
+                        No national team
+                    {% else %}
+                        National team: {{ player.national.name }} ({{ player.national.country }})
+                    {% endif %}
+                </div>
                 <div>
                     <form action="{{ path('app_player_new') }}">
                         <input type="submit" value="New" />
