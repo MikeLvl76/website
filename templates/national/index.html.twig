@@ -7,26 +7,26 @@
         <div>
             <ul>
             {% for national in nationals %}
-                <li>{{ national.id }}</br>
-                {{ national.firstname }}</br>
-                {{ national.lastname }}</br>
-                {{ national.age }}</br>
-                {{ national.size }}</br>
-                {{ national.nationality }}</br>
-                <form action="{{ path('app_national_new') }}">
-                    <input type="submit" value="New" />
-                </form></br>
-                <form action="{{ path('app_national_show', {'id': national.id}) }}">
-                    <input type="submit" value="View" />
-                </form></br>
-                <form action="{{ path('app_national_edit', {'id': national.id}) }}">
-                    <input type="submit" value="Edit" />
-                </form></li>
+                <li>
+                <div>{{ national.name }}</div>
+                <div>{{ national.country }}</div>
+                <div>
+                    <form action="{{ path('app_national_new') }}">
+                        <input type="submit" value="New" />
+                    </form>
+                    <form action="{{ path('app_national_show', {'id': national.id}) }}">
+                        <input type="submit" value="View" />
+                    </form>
+                    <form action="{{ path('app_national_edit', {'id': national.id}) }}">
+                        <input type="submit" value="Edit" />
+                    </form>
+                <div>
+                </li>
             {% else %}
                 <form action="{{ path('app_national_new') }}">
                     <input type="submit" value="Create a national team" />
                 </form>
-            {% endfor %} </ul></br>
+            {% endfor %} </ul>
             </div>
         <div>
             <a href="{{ path('app_index') }}">Home</a>

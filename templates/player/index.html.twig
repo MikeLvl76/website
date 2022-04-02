@@ -14,6 +14,14 @@
                 <div>Size: {{ player.size }}</div>
                 <div>Nationality: {{ player.nationality }}</div>
                 <div>
+                    {% if player.club is empty %}
+                        No club
+                    {% else %}
+                        Club: {{ player.club.name }}
+                    {% endif %}
+                </div>
+                <div>National team: {{ player.national.name }} ({{ player.national.country }})</div>
+                <div>
                     <form action="{{ path('app_player_new') }}">
                         <input type="submit" value="New" />
                     </form>

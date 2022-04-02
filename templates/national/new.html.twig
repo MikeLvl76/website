@@ -1,11 +1,11 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New National{% endblock %}
+{% block title %}Add national team{% endblock %}
 
 {% block body %}
-    <h1>Create new National</h1>
+    <h1>Informations to put</h1>
 
     {{ include('national/_form.html.twig') }}
 
-    <a href="{{ path('app_national_index') }}">back to list</a>
+    <a href="{{ path('app_national_index') }}">Back</a>
 {% endblock %}
