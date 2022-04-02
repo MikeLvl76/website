@@ -21,7 +21,7 @@ class National
     #[ORM\Column(type: 'string', length: 255)]
     private $country;
 
-    #[ORM\OneToMany(mappedBy: 'national', targetEntity: PLayer::class)]
+    #[ORM\OneToMany(mappedBy: 'national', targetEntity: Player::class)]
     private $player;
 
     public function __construct()
@@ -66,7 +66,7 @@ class National
         return $this->player;
     }
 
-    public function addPlayer(PLayer $player): self
+    public function addPlayer(Player $player): self
     {
         if (!$this->player->contains($player)) {
             $this->player[] = $player;
@@ -76,7 +76,7 @@ class National
         return $this;
     }
 
-    public function removePlayer(PLayer $player): self
+    public function removePlayer(Player $player): self
     {
         if ($this->player->removeElement($player)) {
             // set the owning side to null (unless already changed)

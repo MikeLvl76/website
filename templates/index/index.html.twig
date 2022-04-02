@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Home{% endblock %}
+
+{% block body %}
+<h1>Welcome home !<h1>
+<ul>
+<li><a href="{{ path('app_player_index') }}">See players</a></li>
+<li><a href="{{ path('app_club_index') }}">See clubs</a></li>
+<li><a href="{{ path('app_national_index') }}">See national teams</a></li>
+</ul>
+{% endblock %}
