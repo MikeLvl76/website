@@ -7,26 +7,28 @@
         <div>
             <ul>
             {% for player in players %}
-                <li>{{ player.id }}</br>
-                {{ player.firstname }}</br>
-                {{ player.lastname }}</br>
-                {{ player.age }}</br>
-                {{ player.size }}</br>
-                {{ player.nationality }}</br>
-                <form action="{{ path('app_player_new') }}">
-                    <input type="submit" value="New" />
-                </form></br>
-                <form action="{{ path('app_player_show', {'id': player.id}) }}">
-                    <input type="submit" value="View" />
-                </form></br>
-                <form action="{{ path('app_player_edit', {'id': player.id}) }}">
-                    <input type="submit" value="Edit" />
-                </form></li>
+                <li>
+                <div>Firstname: {{ player.firstname }}</div>
+                <div>Lastname: {{ player.lastname }}</div>
+                <div>Age: {{ player.age }}</div>
+                <div>Size: {{ player.size }}</div>
+                <div>Nationality: {{ player.nationality }}</div>
+                <div>
+                    <form action="{{ path('app_player_new') }}">
+                        <input type="submit" value="New" />
+                    </form>
+                    <form action="{{ path('app_player_show', {'id': player.id}) }}">
+                        <input type="submit" value="View" />
+                    </form>
+                    <form action="{{ path('app_player_edit', {'id': player.id}) }}">
+                        <input type="submit" value="Edit" />
+                    </form>
+                </div></li>
             {% else %}
                 <form action="{{ path('app_player_new') }}">
                     <input type="submit" value="Create a player" />
                 </form>
-            {% endfor %} </ul></br>
+            {% endfor %} </ul>
             </div>
         <div>
             <a href="{{ path('app_index') }}">Home</a>
