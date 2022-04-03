@@ -13,6 +13,7 @@ class NationalType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
+            ->add('flag', TextType::class, ['label' => 'Flag icon url '])
             ->add('name', TextType::class, ['label' => 'Name '])
             ->add('country', TextType::class, ['label' => 'Representated country '])
         ;

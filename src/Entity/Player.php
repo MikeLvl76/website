@@ -13,6 +13,9 @@ class Player
     #[ORM\Column(type: 'integer')]
     private $id;
 
+    #[ORM\Column(type: 'string', length: 1000)]
+    private $photo;
+
     #[ORM\Column(type: 'string', length: 255)]
     private $firstname;
 
@@ -37,6 +40,18 @@ class Player
     public function getId(): ?int
     {
         return $this->id;
+    }
+
+    public function getPhoto(): ?string
+    {
+        return $this->photo;
+    }
+
+    public function setPhoto(string $photo): self
+    {
+        $this->photo = $photo;
+
+        return $this;
     }
 
     public function getFirstname(): ?string

@@ -15,6 +15,9 @@ class Club
     #[ORM\Column(type: 'integer')]
     private $id;
 
+    #[ORM\Column(type: 'string', length: 1000)]
+    private $logo;
+
     #[ORM\Column(type: 'string', length: 255)]
     private $name;
 
@@ -35,6 +38,18 @@ class Club
     public function getId(): ?int
     {
         return $this->id;
+    }
+
+    public function getLogo(): ?string
+    {
+        return $this->logo;
+    }
+
+    public function setLogo(string $logo): self
+    {
+        $this->logo = $logo;
+
+        return $this;
     }
 
     public function getName(): ?string

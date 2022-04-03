@@ -15,6 +15,9 @@ class National
     #[ORM\Column(type: 'integer')]
     private $id;
 
+    #[ORM\Column(type: 'string', length: 1000)]
+    private $flag;
+
     #[ORM\Column(type: 'string', length: 255)]
     private $name;
 
@@ -32,6 +35,18 @@ class National
     public function getId(): ?int
     {
         return $this->id;
+    }
+
+    public function getFlag(): ?string
+    {
+        return $this->flag;
+    }
+
+    public function setFlag(string $flag): self
+    {
+        $this->flag = $flag;
+
+        return $this;
     }
 
     public function getName(): ?string

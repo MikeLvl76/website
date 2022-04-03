@@ -13,6 +13,7 @@ class ClubType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
+            ->add('logo', TextType::class, ['label' => 'Logo url '])
             ->add('name', TextType::class, ['label' => 'Name '])
             ->add('city', TextType::class, ['label' => 'City '])
             ->add('country', TextType::class, ['label' => 'Country '])

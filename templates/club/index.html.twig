@@ -8,6 +8,13 @@
             <ul>
             {% for club in clubs %}
                 <li>
+                <div>
+                {% if club.logo is empty %}
+                    Unavailable logo
+                {% else %}
+                    {{ club.logo }}
+                {% endif %}
+                </div>
                 <div>{{ club.name }}</div>
                 <div>{{ club.city }}</div>
                 <div>{{ club.country }}</div>

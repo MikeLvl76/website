@@ -8,6 +8,13 @@
             <ul>
             {% for player in players %}
                 <li>
+                <div>
+                {% if player.photo is empty %}
+                    Unavailable photo
+                {% else %}
+                    {{ player.photo }}
+                {% endif %}
+                </div>
                 <div>Firstname: {{ player.firstname }}</div>
                 <div>Lastname: {{ player.lastname }}</div>
                 <div>Age: {{ player.age }}</div>

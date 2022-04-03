@@ -8,6 +8,13 @@
             <ul>
             {% for national in nationals %}
                 <li>
+                <div>
+                {% if national.flag is empty %}
+                    Unavailable flag
+                {% else %}
+                    {{ national.flag }}
+                {% endif %}
+                </div>
                 <div>{{ national.name }}</div>
                 <div>{{ national.country }}</div>
                 <div>
