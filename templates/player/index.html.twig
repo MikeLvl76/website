@@ -12,7 +12,7 @@
                 {% if player.photo is empty %}
                     Unavailable photo
                 {% else %}
-                    {{ player.photo }}
+                    <img width='10%' src="{{ player.photo }}"/>
                 {% endif %}
                 </div>
                 <div>Firstname: {{ player.firstname }}</div>

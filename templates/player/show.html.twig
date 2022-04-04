@@ -4,9 +4,12 @@
 
 {% block body %}
     <h1>Details</h1>
-
     <table class="table">
         <tbody>
+            <tr>
+                <th></th>
+                <td><img width='10%' src="{{ player.photo }}"/></td>
+            </tr>
             <tr>
                 <th>Firstname</th>
                 <td>{{ player.firstname }}</td>
