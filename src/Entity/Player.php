@@ -31,6 +31,9 @@ class Player
     #[ORM\Column(type: 'string', length: 3)]
     private $nationality;
 
+    #[ORM\Column(type: 'string', length: 3)]
+    private $position;
+
     #[ORM\ManyToOne(targetEntity: Club::class, inversedBy: 'player')]
     private $club;
 
@@ -110,6 +113,18 @@ class Player
     public function setNationality(string $nationality): self
     {
         $this->nationality = $nationality;
+
+        return $this;
+    }
+
+    public function getPosition(): ?string
+    {
+        return $this->position;
+    }
+
+    public function setPosition(string $position): self
+    {
+        $this->position = $position;
 
         return $this;
     }
