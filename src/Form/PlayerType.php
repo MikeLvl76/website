@@ -57,7 +57,7 @@ class PlayerType extends AbstractType
                 ])
             ]])
             ->add('nationality', TextType::class, ['label' => 'Country birth (put 3 first letters or official initials) ', 'attr' => array('placeholder' => 'nat')])
-            ->add('position', TextType::class, ['label' => 'position on the pitch ( official initials) ', 'attr' => array('placeholder' => 'pos')])
+            ->add('position', TextType::class, ['label' => 'Position on the pitch (official initials) ', 'attr' => array('placeholder' => 'pos')])
             ->add('club', EntityType::class, ['class' => Club::class, 'label' => 'Current club ', 'choice_label' => 'name', 'attr' => array('placeholder' => 'club')])
             ->add('national', EntityType::class, ['class' => National::class, 'label' => 'Country choosen ', 'choice_label' => 'name', 'attr' => array('placeholder' => 'country')])
         ;

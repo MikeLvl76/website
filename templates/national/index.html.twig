@@ -3,39 +3,50 @@
 {% block title %}National teams{% endblock %}
 
 {% block body %}
-    <h1>List of all national teams</h1>
-        <div>
-            <ul>
-            {% for national in nationals %}
-                <li>
-                <div>
-                {% if national.flag is empty %}
-                    Unavailable flag
-                {% else %}
-                    <img width='5%' src="{{ national.flag }}"/>
-                {% endif %}
-                </div>
-                <div>{{ national.name }}</div>
-                <div>{{ national.country }}</div>
-                <div>
-                    <form action="{{ path('app_national_new') }}">
-                        <input type="submit" value="New" />
-                    </form>
-                    <form action="{{ path('app_national_show', {'id': national.id}) }}">
-                        <input type="submit" value="View" />
-                    </form>
-                    <form action="{{ path('app_national_edit', {'id': national.id}) }}">
-                        <input type="submit" value="Edit" />
-                    </form>
-                <div>
-                </li>
-            {% else %}
-                <form action="{{ path('app_national_new') }}">
-                    <input type="submit" value="Create a national team" />
-                </form>
-            {% endfor %} </ul>
-            </div>
-        <div>
-            <a href="{{ path('app_index') }}">Home</a>
+<body style="background-image: 
+                url('https://us.123rf.com/450wm/cluckva/cluckva1404/cluckva140400009/27319727-stock-vector-gray-gradient-abstract-background-with-space-for-your-text-and-picture-.jpg?ver=6');
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;">
+
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{{ path('app_index') }}">Home</a>
+            <h1>National teams</h1>
+            <form class="d-flex" action="{{ path('app_national_new') }}">
+                <input class="form-control me-2" type="submit" value="New" />
+            </form>
         </div>
+    </nav><br>  
+
+    <ul class="list-group list-group-horizontal list-group-flush">
+        {% for national in nationals %}
+            <li class="list-group-item">
+                <div class="card-img-top mx-auto">
+                    {% if national.flag is empty %}
+                        Unavailable flag
+                    {% else %}
+                        <img style="width: 10%" class="card-img-top mx-auto" src="{{ national.flag }}"/>
+                    {% endif %}
+                </div>
+                <div class="card-body">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item bg-transparent">{{ national.name }}</li>
+                        <li class="list-group-item bg-transparent">{{ national.country }}</li>
+                        <li class="list-group-item bg-transparent">
+                            <div class="d-flex justify-content-center">
+                                <form action="{{ path('app_national_show', {'id': national.id}) }}">
+                                    <input type="submit" value="View" />
+                                </form>
+                                <form action="{{ path('app_national_edit', {'id': national.id}) }}">
+                                    <input type="submit" value="Edit" />
+                                </form>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+        {% endfor %} 
+    </ul>
+</body>
 {% endblock %}

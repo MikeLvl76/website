@@ -3,9 +3,20 @@
 {% block title %}Add club{% endblock %}
 
 {% block body %}
-    <h1>Informations to put</h1>
+<body style="background-image: 
+                url('https://us.123rf.com/450wm/cluckva/cluckva1404/cluckva140400009/27319727-stock-vector-gray-gradient-abstract-background-with-space-for-your-text-and-picture-.jpg?ver=6');
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;">
+
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+            <h1>Informations about club</h1>
+            <a class="navbar-brand" href="{{ path('app_club_index') }}">Back</a>
+        </div>
+    </nav><br>
 
     {{ include('club/_form.html.twig') }}
 
-    <a href="{{ path('app_club_index') }}">Back</a>
+</body>
 {% endblock %}

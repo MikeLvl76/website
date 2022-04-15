@@ -3,9 +3,20 @@
 {% block title %}{{ player.firstname }} {{ player.lastname }}{% endblock %}
 
 {% block body %}
-    <h1>Update fields</h1>
+<body style="background-image: 
+                url('https://us.123rf.com/450wm/cluckva/cluckva1404/cluckva140400009/27319727-stock-vector-gray-gradient-abstract-background-with-space-for-your-text-and-picture-.jpg?ver=6');
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;">
+
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+            <h1>Edit player</h1>
+            <a class="navbar-brand" href="{{ path('app_player_index') }}">Back</a>
+        </div>
+    </nav><br>
 
     {{ include('player/_form.html.twig', {'button_label': 'Update'}) }}
     {{ include('player/_delete_form.html.twig') }}
-    <a href="{{ path('app_player_index') }}">Back</a>
+</body>
 {% endblock %}

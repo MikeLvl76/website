@@ -3,43 +3,42 @@
 {% block title %}{{ player.firstname }} {{ player.lastname }}{% endblock %}
 
 {% block body %}
-    <h1>Details</h1>
-    <table class="table">
-        <tbody>
-            <tr>
-                <th></th>
-                <td><img width='10%' src="{{ player.photo }}"/></td>
-            </tr>
-            <tr>
-                <th>Firstname</th>
-                <td>{{ player.firstname }}</td>
-            </tr>
-            <tr>
-                <th>Lastname</th>
-                <td>{{ player.lastname }}</td>
-            </tr>
-            <tr>
-                <th>Age</th>
-                <td>{{ player.age }}</td>
-            </tr>
-            <tr>
-                <th>Size</th>
-                <td>{{ player.size }}</td>
-            </tr>
-            <tr>
-                <th>Nationality</th>
-                <td>{{ player.nationality }}</td>
-            </tr>
-            <tr>
-                <th>Position</th>
-                <td>{{ player.position }}</td>
-            </tr>
-        </tbody>
-    </table>
+<body style="background-image: 
+                url('https://us.123rf.com/450wm/cluckva/cluckva1404/cluckva140400009/27319727-stock-vector-gray-gradient-abstract-background-with-space-for-your-text-and-picture-.jpg?ver=6');
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;">
 
-    <a href="{{ path('app_player_index') }}">Back</a>
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{{ path('app_player_index') }}">Back</a>
+            <h1>Details</h1>
+        </div>
+    </nav><br>
 
-    <a href="{{ path('app_player_edit', {'id': player.id}) }}">Edit</a>
-
-    {{ include('player/_delete_form.html.twig') }}
+    <div class="d-flex flex-column bd-highlight mb-3">
+        <div class="p-2 bd-highlight">
+            <img width='10%' src="{{ player.photo }}"/>
+        </div>
+        <div class="p-2 bd-highlight">
+            {{ player.firstname }}
+        </div>
+        <div class="p-2 bd-highlight">
+            {{ player.lastname }}
+        </div>
+        <div class="p-2 bd-highlight">
+            {{ player.age }}
+        </div>
+        <div class="p-2 bd-highlight">
+            {{ player.nationality }}
+        </div>
+        <div class="p-2 bd-highlight">
+            {{ player.position }}
+        </div>
+        <div class="p-2 bd-highlight d-flex justify-content-left">
+            <a class="btn btn-warning" href="{{ path('app_player_edit', {'id': player.id}) }}">Edit</a>
+            {{ include('player/_delete_form.html.twig') }}
+        </div>
+    </div>
+</body>
 {% endblock %}

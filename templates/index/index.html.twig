@@ -3,10 +3,47 @@
 {% block title %}Home{% endblock %}
 
 {% block body %}
-<h1>Welcome home !<h1>
-<ul>
-<li><a href="{{ path('app_player_index') }}">See players</a></li>
-<li><a href="{{ path('app_club_index') }}">See clubs</a></li>
-<li><a href="{{ path('app_national_index') }}">See national teams</a></li>
-</ul>
+<body style="background-image: 
+                url('https://us.123rf.com/450wm/cluckva/cluckva1404/cluckva140400009/27319727-stock-vector-gray-gradient-abstract-background-with-space-for-your-text-and-picture-.jpg?ver=6');
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;">
+    
+    <div class="container bg-light rounded">
+        <h1 class="text-center text-dark">Welcome on the homepage !</h1>
+    </div>
+
+    <div class="container">
+        <h2 class="text-left text-dark fs-3">Check the pages below !</h2>
+    </div>
+
+    <ul class="list-group list-group-horizontal list-group-flush">
+        <li class="list-group-item bg-transparent"><div class="card text-center" style="width: 18rem;">
+            <img style="width: 50%" class="card-img-top mx-auto" src="https://cdn.icon-icons.com/icons2/907/PNG/512/group-of-people-in-a-formation_icon-icons.com_70476.png"/>
+            <div class="card-body">
+            <h5 class="card-title">Players</h5>
+            <p class="card-text">Details about players like name, age or club.</p>
+            <a class="btn btn-primary" href="{{ path('app_player_index') }}">See</a>
+            </div>
+        </div></li>
+
+        <li class="list-group-item bg-transparent"><div class="card text-center" style="width: 18rem;">
+            <img style="width: 50%" class="card-img-top mx-auto" src="https://icon-library.com/images/icon-football-club/icon-football-club-24.jpg"/>
+            <div class="card-body">
+            <h5 class="card-title">Clubs</h5>
+            <p class="card-text">Details about clubs like name, city or country.</p>
+            <a class="btn btn-primary" href="{{ path('app_club_index') }}">See</a>
+            </div>
+        </div></li>
+
+        <li class="list-group-item bg-transparent"><div class="card text-center" style="width: 18rem;">
+            <img style="width: 50%" class="card-img-top mx-auto" src="https://cdn.icon-icons.com/icons2/910/PNG/512/flag_icon-icons.com_71193.png"/>
+            <div class="card-body">
+            <h5 class="card-title">National teams</h5>
+            <p class="card-text">Details about national teams like name or code.</p>
+            <a class="btn btn-primary" href="{{ path('app_national_index') }}">See</a>
+            </div>
+        </div></li>
+    </ul>
+</body>
 {% endblock %}

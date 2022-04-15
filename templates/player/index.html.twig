@@ -3,56 +3,68 @@
 {% block title %}Players{% endblock %}
 
 {% block body %}
-    <h1>List of all players</h1>
-        <div>
-            <ul>
-            {% for player in players %}
-                <li>
-                <div>
-                {% if player.photo is empty %}
-                    Unavailable photo
-                {% else %}
-                    <img width='10%' src="{{ player.photo }}"/>
-                {% endif %}
-                </div>
-                <div>Firstname: {{ player.firstname }}</div>
-                <div>Lastname: {{ player.lastname }}</div>
-                <div>Age: {{ player.age }}</div>
-                <div>Size: {{ player.size }}</div>
-                <div>Nationality: {{ player.nationality }}</div>
-                <div>Position: {{ player.position }}</div>
-                <div>
-                    {% if player.club is empty %}
-                        No club
-                    {% else %}
-                        Club: {{ player.club.name }}
-                    {% endif %}
-                </div>
-                <div>
-                    {% if player.national is empty %}
-                        No national team
-                    {% else %}
-                        National team: {{ player.national.name }} ({{ player.national.country }})
-                    {% endif %}
-                </div>
-                <div>
-                    <form action="{{ path('app_player_new') }}">
-                        <input type="submit" value="New" />
-                    </form>
-                    <form action="{{ path('app_player_show', {'id': player.id}) }}">
-                        <input type="submit" value="View" />
-                    </form>
-                    <form action="{{ path('app_player_edit', {'id': player.id}) }}">
-                        <input type="submit" value="Edit" />
-                    </form>
-                </div></li>
-            {% else %}
-                <form action="{{ path('app_player_new') }}">
-                    <input type="submit" value="Create a player" />
-                </form>
-            {% endfor %} </ul>
-            </div>
-        <div>
-            <a href="{{ path('app_index') }}">Home</a>
+<body style="background-image: 
+                url('https://us.123rf.com/450wm/cluckva/cluckva1404/cluckva140400009/27319727-stock-vector-gray-gradient-abstract-background-with-space-for-your-text-and-picture-.jpg?ver=6');
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;">
+
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{{ path('app_index') }}">Home</a>
+            <h1>Players</h1>
+            <form class="d-flex" action="{{ path('app_player_new') }}">
+                <input class="form-control me-2" type="submit" value="New" />
+            </form>
         </div>
+    </nav><br>  
+
+    <ul class="list-group list-group-horizontal list-group-flush">
+        {% for player in players %}
+            <li class="list-group-item">
+                <div class="card-img-top mx-auto">
+                    {% if player.photo is empty %}
+                        Unavailable photo
+                    {% else %}
+                        <img style="width: 50%" class="card-img-top mx-auto" src="{{ player.photo }}"/>
+                    {% endif %}
+                </div>
+                <div class="card-body">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item bg-transparent">Firstname: {{ player.firstname }}</li>
+                        <li class="list-group-item bg-transparent">Lastname: {{ player.lastname }}</li>
+                        <li class="list-group-item bg-transparent">Age: {{ player.age }}</li>
+                        <li class="list-group-item bg-transparent">Size: {{ player.size }}</li>
+                        <li class="list-group-item bg-transparent">Nationality: {{ player.nationality }}</li>
+                        <li class="list-group-item bg-transparent">Position: {{ player.position }}</li>
+                        <li class="list-group-item bg-transparent">
+                            {% if player.club is empty %}
+                                No club
+                            {% else %}
+                                Club: {{ player.club.name }}
+                            {% endif %}
+                        </li>
+                        <li class="list-group-item bg-transparent">
+                            {% if player.national is empty %}
+                                No national team
+                            {% else %}
+                                National team: {{ player.national.name }} ({{ player.national.country }})
+                            {% endif %}
+                        </li>
+                        <li class="list-group-item bg-transparent">
+                            <div class="d-flex justify-content-center">
+                                <form action="{{ path('app_player_show', {'id': player.id}) }}">
+                                    <input type="submit" value="View" />
+                                </form>
+                                <form action="{{ path('app_player_edit', {'id': player.id}) }}">
+                                    <input type="submit" value="Edit" />
+                                </form>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+        {% endfor %} 
+    </ul>
+</body>
 {% endblock %}
