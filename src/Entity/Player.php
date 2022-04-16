@@ -43,6 +43,12 @@ class Player
     #[ORM\Column(type: 'integer')]
     private $red_cards;
 
+    #[ORM\Column(type: 'integer')]
+    private $total_goals;
+
+    #[ORM\Column(type: 'integer')]
+    private $total_assists;
+
     #[ORM\ManyToOne(targetEntity: Club::class, inversedBy: 'player')]
     private $club;
 
@@ -170,6 +176,30 @@ class Player
     public function setRedCards(int $red_cards): self
     {
         $this->red_cards = $red_cards;
+
+        return $this;
+    }
+
+    public function getTotalGoals(): ?int
+    {
+        return $this->total_goals;
+    }
+
+    public function setTotalGoals(int $total_goals): self
+    {
+        $this->total_assists = $total_goals;
+
+        return $this;
+    }
+
+    public function getTotalAssists(): ?int
+    {
+        return $this->total_assists;
+    }
+
+    public function setTotalAssists(int $total_assists): self
+    {
+        $this->total_assists = $total_assists;
 
         return $this;
     }
