@@ -34,6 +34,15 @@ class Player
     #[ORM\Column(type: 'string', length: 3)]
     private $position;
 
+    #[ORM\Column(type: 'integer')]
+    private $trophies;
+
+    #[ORM\Column(type: 'integer')]
+    private $yellow_cards;
+
+    #[ORM\Column(type: 'integer')]
+    private $red_cards;
+
     #[ORM\ManyToOne(targetEntity: Club::class, inversedBy: 'player')]
     private $club;
 
@@ -125,6 +134,42 @@ class Player
     public function setPosition(string $position): self
     {
         $this->position = $position;
+
+        return $this;
+    }
+
+    public function getTrophies(): ?int
+    {
+        return $this->trophies;
+    }
+
+    public function setTrophies(int $trophies): self
+    {
+        $this->trophies = $trophies;
+
+        return $this;
+    }
+
+    public function getYellowCards(): ?int
+    {
+        return $this->yellow_cards;
+    }
+
+    public function setYellowCards(int $yellow_cards): self
+    {
+        $this->yellow_cards = $yellow_cards;
+
+        return $this;
+    }
+
+    public function getRedCards(): ?int
+    {
+        return $this->red_cards;
+    }
+
+    public function setRedCards(int $red_cards): self
+    {
+        $this->red_cards = $red_cards;
 
         return $this;
     }

@@ -3,6 +3,11 @@
 {% block title %}Home{% endblock %}
 
 {% block body %}
+
+{% set player_image = "https://cdn.icon-icons.com/icons2/907/PNG/512/group-of-people-in-a-formation_icon-icons.com_70476.png" %}
+{% set club_logo = "https://icon-library.com/images/icon-football-club/icon-football-club-24.jpg" %}
+{% set national_flag = "https://cdn.icon-icons.com/icons2/910/PNG/512/flag_icon-icons.com_71193.png" %}
+
 <body style="background-image: url({{ bg }});
                 background-position: center;
                 background-repeat: no-repeat;
@@ -13,12 +18,16 @@
     </div>
 
     <div class="container">
-        <h2 class="text-left text-dark fs-3">Check the pages below !</h2>
+        <h2 class="text-center text-dark fs-3">Check the pages below !</h2>
     </div>
 
-    <ul class="list-group list-group-horizontal list-group-flush">
+    <ul class="list-group list-group-horizontal list-group-flush justify-content-center">
         <li class="list-group-item bg-transparent"><div class="card text-center" style="width: 18rem;">
-            <img style="width: 50%" class="card-img-top mx-auto" src="https://cdn.icon-icons.com/icons2/907/PNG/512/group-of-people-in-a-formation_icon-icons.com_70476.png"/>
+            {% if player_image is empty %}
+                <h3 class="card-title">No image available</h3>
+            {% else %}
+                <img style="width: 50%" class="card-img-top mx-auto" src='{{ player_image }}'/>
+            {% endif %}
             <div class="card-body">
             <h5 class="card-title">Players</h5>
             <p class="card-text">Details about players like name, age or club.</p>
@@ -27,7 +36,11 @@
         </div></li>
 
         <li class="list-group-item bg-transparent"><div class="card text-center" style="width: 18rem;">
-            <img style="width: 50%" class="card-img-top mx-auto" src="https://icon-library.com/images/icon-football-club/icon-football-club-24.jpg"/>
+            {% if club_logo is empty %}
+                <h3 class="card-title">No logo available</h3>
+            {% else %}
+                <img style="width: 50%" class="card-img-top mx-auto" src='{{ club_logo }}'/>
+            {% endif %}
             <div class="card-body">
             <h5 class="card-title">Clubs</h5>
             <p class="card-text">Details about clubs like name, city or country.</p>
@@ -36,7 +49,11 @@
         </div></li>
 
         <li class="list-group-item bg-transparent"><div class="card text-center" style="width: 18rem;">
-            <img style="width: 50%" class="card-img-top mx-auto" src="https://cdn.icon-icons.com/icons2/910/PNG/512/flag_icon-icons.com_71193.png"/>
+            {% if national_flag is empty %}
+                <h3 class="card-title">No flag available</h3>
+            {% else %}
+                <img style="width: 50%" class="card-img-top mx-auto" src='{{ national_flag }}'/>
+            {% endif %}
             <div class="card-body">
             <h5 class="card-title">National teams</h5>
             <p class="card-text">Details about national teams like name or code.</p>
