@@ -20,13 +20,28 @@
             <img width='10%' src="{{ club.logo }}"/>
         </div>
         <div class="p-2 bd-highlight">
-            {{ club.name }}
+            Name: {{ club.name }}
         </div>
         <div class="p-2 bd-highlight">
-            {{ club.city }}
+            City: {{ club.city }}
         </div>
         <div class="p-2 bd-highlight">
-            {{ club.country }}
+            Country: {{ club.country }}
+        </div>
+        <div class="p-2 bd-highlight">
+            Number of participated tournaments: {{ club.totalTournaments }}
+        </div>
+        <div class="p-2 bd-highlight">
+            Number of won tournaments: {{ club.wonTournaments }}
+        </div>
+        <div class="p-2 bd-highlight">
+            Number of wins: {{ club.totalWins }}
+        </div>
+        <div class="p-2 bd-highlight">
+            Number of loses: {{ club.totalLoses }}
+        </div>
+        <div class="p-2 bd-highlight">
+            Number of draws: {{ club.totalDraws }}
         </div>
         <div class="p-2 bd-highlight d-flex justify-content-left">
             <a class="btn btn-warning" href="{{ path('app_club_edit', {'id': club.id}) }}">Edit</a>

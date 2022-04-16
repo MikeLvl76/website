@@ -20,19 +20,40 @@
             <img width='10%' src="{{ player.photo }}"/>
         </div>
         <div class="p-2 bd-highlight">
-            {{ player.firstname }}
+            Firstname: {{ player.firstname }}
         </div>
         <div class="p-2 bd-highlight">
-            {{ player.lastname }}
+            Lastname: {{ player.lastname }}
         </div>
         <div class="p-2 bd-highlight">
-            {{ player.age }}
+            Age: {{ player.age }}
         </div>
         <div class="p-2 bd-highlight">
-            {{ player.nationality }}
+            Nationality: {{ player.nationality }}
         </div>
         <div class="p-2 bd-highlight">
-            {{ player.position }}
+            Position: {{ player.position }}
+        </div>
+        <div class="p-2 bd-highlight">
+            Number of trophies: {{ player.trophies }}
+        </div>
+        <div class="p-2 bd-highlight">
+            Number of yellow cards: {{ player.yellowCards }}
+        </div>
+        <div class="p-2 bd-highlight">
+            Number of red cards: {{ player.redCards }}
+        </div>
+        <div class="p-2 bd-highlight">
+            Total of scored goals: {{ player.totalGoals }}
+        </div>
+        <div class="p-2 bd-highlight">
+            Total of assists: {{ player.totalAssists }}
+        </div>
+        <div class="p-2 bd-highlight">
+            Current club: {{ player.club.name }}
+        </div>
+        <div class="p-2 bd-highlight">
+            Current national team: {{ player.national.name }}
         </div>
         <div class="p-2 bd-highlight d-flex justify-content-left">
             <a class="btn btn-warning" href="{{ path('app_player_edit', {'id': player.id}) }}">Edit</a>

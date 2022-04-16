@@ -20,10 +20,25 @@
             <img width='10%' src="{{ national.flag }}"/>
         </div>
         <div class="p-2 bd-highlight">
-            {{ national.name }}
+            Name: {{ national.name }}
         </div>
         <div class="p-2 bd-highlight">
-            {{ national.country }}
+            Country: {{ national.country }}
+        </div>
+        <div class="p-2 bd-highlight">
+            Number of participated tournaments: {{ national.totalTournaments }}
+        </div>
+        <div class="p-2 bd-highlight">
+            Number of won tournaments: {{ national.wonTournaments }}
+        </div>
+        <div class="p-2 bd-highlight">
+            Number of wins: {{ national.totalWins }}
+        </div>
+        <div class="p-2 bd-highlight">
+            Number of loses: {{ national.totalLoses }}
+        </div>
+        <div class="p-2 bd-highlight">
+            Number of draws: {{ national.totalDraws }}
         </div>
         <div class="p-2 bd-highlight d-flex justify-content-left">
             <a class="btn btn-warning" href="{{ path('app_national_edit', {'id': national.id}) }}">Edit</a>
