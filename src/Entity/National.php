@@ -24,6 +24,21 @@ class National
     #[ORM\Column(type: 'string', length: 255)]
     private $country;
 
+    #[ORM\Column(type: 'integer')]
+    private $total_tournaments;
+
+    #[ORM\Column(type: 'integer')]
+    private $won_tournaments;
+
+    #[ORM\Column(type: 'integer')]
+    private $total_wins;
+
+    #[ORM\Column(type: 'integer')]
+    private $total_loses;
+
+    #[ORM\Column(type: 'integer')]
+    private $total_draws;
+
     #[ORM\OneToMany(mappedBy: 'national', targetEntity: Player::class)]
     private $player;
 
@@ -73,8 +88,68 @@ class National
         return $this;
     }
 
+    public function getTotalTournaments(): ?int
+    {
+        return $this->total_tournaments;
+    }
+
+    public function setTotalTournaments(int $total_tournaments): self
+    {
+        $this->total_tournaments = $total_tournaments;
+
+        return $this;
+    }
+
+    public function getWonTournaments(): ?int
+    {
+        return $this->won_tournaments;
+    }
+
+    public function setWonTournaments(int $won_tournaments): self
+    {
+        $this->won_tournaments = $won_tournaments;
+
+        return $this;
+    }
+
+    public function getTotalWins(): ?int
+    {
+        return $this->total_wins;
+    }
+
+    public function setTotalWins(int $total_wins): self
+    {
+        $this->total_wins = $total_wins;
+
+        return $this;
+    }
+
+    public function getTotalLoses(): ?int
+    {
+        return $this->total_loses;
+    }
+
+    public function setTotalLoses(int $total_loses): self
+    {
+        $this->total_loses = $total_loses;
+
+        return $this;
+    }
+
+    public function getTotalDraws(): ?int
+    {
+        return $this->total_draws;
+    }
+
+    public function setTotalDraws(int $total_draws): self
+    {
+        $this->total_draws = $total_draws;
+
+        return $this;
+    }
+
     /**
-     * @return Collection<int, PLayer>
+     * @return Collection<int, Player>
      */
     public function getPlayer(): Collection
     {
